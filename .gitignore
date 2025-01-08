@@ -1,0 +1,22 @@
+# Ignore build artifacts
+bin/
+obj/
+
+# User-specific files
+.vscode/
+.vs/
+*.user
+
+# Logs
+*.log
+
+# Database
+*.db
+
+# Configuration
+appsettings.*.json
+!appsettings.json
+
+# Temporary files
+*.tmp
+*.swp
