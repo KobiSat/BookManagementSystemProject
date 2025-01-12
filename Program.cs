@@ -13,13 +13,17 @@ builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(builder
 
 var app = builder.Build();
 
+// Use custom error handling middleware
+app.UseMiddleware<BookManagementSystem.Middleware.ErrorHandlingMiddleware>();
+
+
 // Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 
-    //Setting a predictable url. 
+    //Set a predictable url
     app.Urls.Add("http://localhost:5000");
     app.Urls.Add("https://localhost:5001");
 }
