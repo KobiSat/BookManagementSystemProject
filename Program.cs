@@ -18,6 +18,10 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+
+    //Setting a predictable url. 
+    app.Urls.Add("http://localhost:5000");
+    app.Urls.Add("https://localhost:5001");
 }
 
 app.UseHttpsRedirection();
@@ -28,6 +32,5 @@ app.MapControllers();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
 
 app.Run();
